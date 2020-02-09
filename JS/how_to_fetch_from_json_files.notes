@@ -1,0 +1,33 @@
+[2020-02-09]
+Notes: How to fetch JSON data from a json file
+
+Let's say we have a file called item.json file
+with following data 
+
+[javascript]
+[
+    { "id": 1, "text": "item One"},
+    { "id": 2, "text": "item Two"},
+    { "id": 3, "text": "item Three"}
+]
+
+[end]
+
+To fetch we do the following
+
+[javascript]
+
+function calculate() {
+    // get request
+    // get request returns a promise after fetching data
+    // to catch the promise we use .then
+    // we have to format the fetched data to json 
+    // we get another promise back
+    fetch('item.json')
+        .then(res =>res.json())
+        .then(data => (document.body.innerHTML = data[0].text));
+}
+
+calculate();
+
+
