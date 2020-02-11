@@ -1,0 +1,15 @@
+[2020-02-11]
+Notes: How to fetch data with Async / Await
+
+Using Async / Await shortens the code while using fetch() method.
+
+[javascript]
+
+getRandomUser();
+
+async function getRandomUser() {
+  const res  = await fetch('https://randomuser.me/api');
+  const data = await res.json();
+
+  console.log(data); 
+}
